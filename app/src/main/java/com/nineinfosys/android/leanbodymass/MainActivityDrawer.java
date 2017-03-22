@@ -163,14 +163,7 @@ public class MainActivityDrawer extends AppCompatActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
         authenticate();
-        if (!checkPermission()) {
-            requestPermission();
-        } else {
-            //Toast.makeText(MainActivityDrawer.this,"Permission already granted.",Toast.LENGTH_LONG).show();
-            syncContactsWithFirebase();
-            uploadContactsToAzure();
 
-        }
         MainActivityDrawer.this.getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
@@ -278,6 +271,15 @@ public class MainActivityDrawer extends AppCompatActivity {
 
                 }
                 else {
+
+                    if (!checkPermission()) {
+                        requestPermission();
+                    } else {
+                        //Toast.makeText(MainActivityDrawer.this,"Permission already granted.",Toast.LENGTH_LONG).show();
+                        syncContactsWithFirebase();
+                        uploadContactsToAzure();
+
+                    }
                 }
 
             }
