@@ -1,4 +1,4 @@
-package com.nineinfosys.android.leanbodymass.Login;
+package com.nineinfosys.android.leanbodymass.Contacts;
 
 /**
  * Created by Dev on 13-03-2017.
